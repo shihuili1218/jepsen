@@ -13,3 +13,4 @@ jobs:
     - name: build images
       run: bash docker/bin/up
     - run: docker images
+    - run: ls
