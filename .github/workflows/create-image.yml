@@ -20,7 +20,15 @@ jobs:
       with:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
-        
+
+    - run: docker tag jepsen_control:latest 469995363/jepsen_control:latest
+    - run: docker tag jepsen_n1:latest 469995363/jepsen_n1:latest
+    - run: docker tag jepsen_n2:latest 469995363/jepsen_n2:latest
+    - run: docker tag jepsen_n3:latest 469995363/jepsen_n3:latest
+    - run: docker tag jepsen_n4:latest 469995363/jepsen_n4:latest
+    - run: docker tag jepsen_n5:latest 469995363/jepsen_n5:latest
+    - run: docker tag debian:bullseye 469995363/debian:bullseye
+    
     - run: docker push jepsen_control:latest
     - run: docker push jepsen_n1:latest
     - run: docker push jepsen_n2:latest
